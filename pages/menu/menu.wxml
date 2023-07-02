@@ -1,0 +1,13 @@
+<!--pages/menu/menu.wxml-->
+<view class="container">
+    <view class="header">MELON MENU</view>
+    <view class="menu-left">
+    <!--菜品种类列表-->
+    甜品
+    </view>
+    <view class="menu-right">
+    <!--菜品展示-->
+    菜品1
+    </view>
+</view>
+

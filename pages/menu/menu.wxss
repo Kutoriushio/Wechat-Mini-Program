@@ -1,0 +1,8 @@
+/* pages/menu/menu.wxss */
+.container {
+    display: flex;
+}
+
+.menu-right {
+    flex: 1;
+}

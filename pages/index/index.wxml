@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <text class="welcome-title"> Hello Melon! </text>
+  <text class="welcome-text">Welcome To Melon Menu!</text>
+  <button class="enter-button" bindtap="enterMenu">Click Here</button>
+</view>

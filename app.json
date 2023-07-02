@@ -1,0 +1,29 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/order/order",
+        "pages/menu/menu"
+    ],
+    "tabBar": {
+        
+        "list": [
+            {
+                "pagePath": "pages/menu/menu",
+                "text": "菜单"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "今日点菜"
+            }
+        ]
+    },
+    
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
