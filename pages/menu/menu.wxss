@@ -1,18 +1,8 @@
 /* pages/menu/menu.wxss */
 
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 999;
-}
-
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
 }
 
 .menu {
@@ -21,19 +11,26 @@
 }
 
 .left {
-    border-right: 1px solid black;
     width: 30%;
+    height: 100%;
     position: fixed;
+    background: #f5f5f5;  
+}
+
+.category.active {
+    background: #fff;  
+    color: #f0145a; 
 }
 
 .right {
-    width: 69%;
+    width: 70%;
     margin-left: 30%;
 }
 
+
 .category{
     height: 50px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dedede;  
     line-height: 50px;
 }
 .recipe {

@@ -1,0 +1,5 @@
+<!--pages/detail/detail.wxml-->
+<view>
+    <text>{{recipe.name}}</text>
+</view>
+

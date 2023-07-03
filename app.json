@@ -2,9 +2,11 @@
     "pages": [
         "pages/index/index",
         "pages/order/order",
-        "pages/menu/menu"
+        "pages/menu/menu",
+        "pages/detail/detail"
     ],
     "tabBar": {
+        "backgroundColor": "#f5f5f5", 
         "list": [
             {
                 "pagePath": "pages/menu/menu",
@@ -23,8 +25,8 @@
     
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
+        "navigationBarBackgroundColor": "#87CEFA",
+        "navigationBarTitleText": "MELON MENU",
         "navigationBarTextStyle": "black"
     },
     "style": "v2",

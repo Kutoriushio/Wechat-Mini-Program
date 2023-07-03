@@ -1,16 +1,18 @@
 <!--pages/menu/menu.wxml-->
 
-<view class="header">MELON MENU</view>
 <view class="container">
     <view class="menu left">
     <!--菜品种类列表-->
-        <view class = "category" wx:for="{{categories}}" wx:key="id" data-index="{{index}}" bindtap="getCurrentCategory">
+        <view wx:for="{{categories}}"  wx:key="id" data-index="{{index}}" bindtap="getCurrentCategory" 
+        class = "category {{curIndex == index ? 'active' : ' '}}">
         {{item.name}}
         </view>
     </view>
     <view class="menu right">
     <!--菜品展示-->
-        <view class="recipe" wx:for="{{selectedRecipe}}" wx:key="id">
+        <view wx:for="{{selectedRecipe}}" wx:key="id" data-id="{{item.id}}"
+        bindtap="goToDetailPage"
+        class="recipe">
         {{item.name}}
         </view>
     </view>
