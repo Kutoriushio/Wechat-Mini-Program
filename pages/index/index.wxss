@@ -1,7 +1,9 @@
 /**index.wxss**/
 .container {
+    display: flex;
     width: 100%;
     height: 100%;
+    justify-content: center;
 }
 .welcome-title {
     position: absolute;

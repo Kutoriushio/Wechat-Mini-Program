@@ -5,15 +5,18 @@
         "pages/menu/menu"
     ],
     "tabBar": {
-        
         "list": [
             {
                 "pagePath": "pages/menu/menu",
-                "text": "菜单"
+                "text": "菜单",
+                "iconPath": "/images/menu.png",
+                "selectedIconPath": "/images/menu.png"
             },
             {
                 "pagePath": "pages/order/order",
-                "text": "今日点菜"
+                "text": "今日点菜",
+                "iconPath": "/images/order.png",
+                "selectedIconPath": "/images/order.png"
             }
         ]
     },

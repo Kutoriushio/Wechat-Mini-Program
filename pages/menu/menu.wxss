@@ -1,8 +1,43 @@
 /* pages/menu/menu.wxss */
-.container {
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    z-index: 999;
 }
 
-.menu-right {
-    flex: 1;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.menu {
+    background-color: white;
+    text-align: center;
+}
+
+.left {
+    border-right: 1px solid black;
+    width: 30%;
+    position: fixed;
+}
+
+.right {
+    width: 69%;
+    margin-left: 30%;
+}
+
+.category{
+    height: 50px;
+    border-bottom: 1px solid black;
+    line-height: 50px;
+}
+.recipe {
+    height: 100px;
+    border-bottom: 1px solid black;
+    line-height: 100px;
 }
