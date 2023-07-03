@@ -7,7 +7,7 @@
         <view class = "category" wx:for="{{categories}}" wx:key="id" data-index="{{index}}" bindtap="getCurrentCategory">
         {{item.name}}
         </view>
-    <view>
+    </view>
     <view class="menu right">
     <!--菜品展示-->
         <view class="recipe" wx:for="{{selectedRecipe}}" wx:key="id">
