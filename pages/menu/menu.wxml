@@ -10,10 +10,13 @@
     </view>
     <view class="menu right">
     <!--菜品展示-->
-        <view wx:for="{{selectedRecipe}}" wx:key="id" data-id="{{item.id}}"
-        bindtap="goToDetailPage"
-        class="recipe">
-        {{item.name}}
+        <view wx:for="{{selectedRecipes}}" wx:key="id" data-id="{{item.id}}"
+        bindtap="goToDetailPage" class="recipe">
+            <image class="recipe-image" src="https://6d65-melon-menu-4gkkki29d5036046-1319270891.tcb.qcloud.la/recipe/金汤肥牛.jpeg"></image>
+            <text class="recipe-text">{{item.name}}</text>
+            <view catchtap="addToOrder" data-id="{{item.id}}" class="add {{item.buttonText == '已添加' ? 'active' : ' '}}">
+            {{item.buttonText}}
+            </view>
         </view>
     </view>
 </view>

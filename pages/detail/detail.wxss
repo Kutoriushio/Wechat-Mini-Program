@@ -1,1 +1,16 @@
 /* pages/detail/detail.wxss */
+.container {
+    height: 100%;
+    width: 100%;
+}
+/* 菜名（居中） */
+.recipe-name {
+    display: flex;
+    height: 200rpx;
+    width: 100%;
+    font-size: 60rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 配料表 */

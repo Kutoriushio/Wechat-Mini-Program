@@ -17,11 +17,13 @@
     background: #f5f5f5;  
 }
 
+/* 选中的种类使用不同样式 */
 .category.active {
     background: #fff;  
     color: #f0145a; 
 }
 
+/* 左边距设为右容器的宽度 */
 .right {
     width: 70%;
     margin-left: 30%;
@@ -29,12 +31,47 @@
 
 
 .category{
-    height: 50px;
+    height: 100rpx;
     border-bottom: 1px solid #dedede;  
-    line-height: 50px;
+    line-height: 100rpx;
 }
+
 .recipe {
-    height: 100px;
+    display: flex;
+    height: 200rpx;
     border-bottom: 1px solid black;
-    line-height: 100px;
+    position: relative;
+}
+
+.add {
+    height: 40rpx;
+    width: 120rpx;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:#33ccff;
+    color: white;
+}
+
+/* 点击按钮用不同的样式 */
+.add.active {
+    background-color: #99ffff;
+    color: #A0A0A0;  
+}
+
+.recipe-text {
+    font-size: 40rpx;
+    height: 40rpx;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.recipe-image {
+    height: 100%;
+    width: 40%;
+    margin-right: 20rpx;
 }

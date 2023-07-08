@@ -1,2 +1,9 @@
 <!--pages/order/order.wxml-->
-<view>今日点菜</view>
+<scroll-view class="container" scroll-y="{{scrollY}}">
+    <view wx:for="{{addedRecipes}}" wx:key="id" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove" class="order {{item.show ? 'show' : ''}}">
+        <view class="recipe">
+        <text class="recipe-name">{{item.name}}</text>
+        </view>
+        <view class="delete-button" bindtap = "delete" data-index="{{index}}">删除</view>
+    </view>
+</scroll-view>

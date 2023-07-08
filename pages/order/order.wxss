@@ -1,1 +1,49 @@
 /* pages/order/order.wxss */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.order {
+    height: 200rpx;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid black;
+}
+
+
+.recipe{
+    height: 100%;
+    width: 100%;
+    margin-left: -160rpx;
+    transform: translateX(160rpx);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-name {
+    font-size: 30px;
+}
+
+.delete-button {
+    position: absolute;
+    height: 100%;
+    width: 160rpx;
+    line-height: 200rpx;
+    top: 0;
+    right: 0;
+    text-align: center;
+    background-color: red;
+    color: white;
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+
+.show .delete-button,
+.show .recipe{
+    transform: translateX(0);
+}

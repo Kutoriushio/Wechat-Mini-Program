@@ -1,5 +1,12 @@
 <!--pages/detail/detail.wxml-->
-<view>
-    <text>{{recipe.name}}</text>
+<view class="container">
+    <view class="recipe-name">
+        <text>{{recipe.name}}</text>
+    </view>
+    <view class="ingredients">
+        <text></text>
+    </view>
+    <view class="recipe">
+    </view>
 </view>
 
