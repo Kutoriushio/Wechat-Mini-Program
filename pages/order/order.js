@@ -5,7 +5,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        recipes: [],
         addedRecipes: [],
         startX: 0,
         startY: 0,
@@ -16,11 +15,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        const app = getApp();
-        const recipes = app.globalData.recipes;
-        this.setData({
-            recipes
-        })
+
     },
 
     /**
@@ -77,7 +72,8 @@ Page({
 
     updateOrder: function() {
         // 选中所有已添加的食谱，并按照点击顺序排序
-        const updatedRecipes = this.data.recipes.filter(recipe => recipe.buttonText === '已添加');
+        const recipes = wx.getStorageSync('recipes');
+        const updatedRecipes = recipes.filter(recipe => recipe.buttonText === '已添加');
         const sortedRecipes = updatedRecipes.sort((a,b) => {
             return a.clickOrder - b.clickOrder;
         });
@@ -133,16 +129,15 @@ Page({
         const btnIndex = e.currentTarget.dataset.index;
         // 找到要删除的菜谱
         let deleteRecipe = this.data.addedRecipes[btnIndex];
-        // 将全局变量中的菜谱修改为‘添加’
-        const recipes = this.data.recipes.map((item) => {
+        // 将本地存储中的菜谱数据修改为‘添加’
+        const recipes = wx.getStorageSync('recipes');
+        const updatedRecipes = recipes.map((item) => {
             if (item.id === deleteRecipe.id) {
                 item.buttonText = '添加'
             }
             return item
         })
-        this.setData({
-            recipes
-        })
+        wx.setStorageSync('recipes', updatedRecipes)
         this.onShow()
         
     }
