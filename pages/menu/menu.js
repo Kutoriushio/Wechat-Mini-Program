@@ -1,59 +1,52 @@
 // pages/menu/menu.js
-
-
+// 引入云数据库
+const db = wx.cloud.database();
 Page({
     data: {
         selectedRecipes: [],
-        recipes: [],
         categories: [],
         curIndex: []
     },
 
-    getRecipes: function(category) {
-        // 获取当前种类的所有食谱
-        let selectedRecipe = [];
-        this.data.recipes.forEach(function(item, index){
-            if (item.category === category) {
-                selectedRecipe.push(item);
-            }
-        })
-        return selectedRecipe;
-    },
-
-    getCurrentCategory: function(e) {
-        // 响应用户的点击事件，显示对应种类的所有食谱
-        let index = e.currentTarget.dataset.index;
-        let category = this.data.categories[index].name;
-
-        let selectedRecipes = [];
-        selectedRecipes = this.getRecipes(category);
-        // 把对应种类的食谱数据传给全局变量selectedRecipes
-        this.data.selectedRecipes = selectedRecipes;
-        this.setData({
-            curIndex: index,
-            selectedRecipes: selectedRecipes
+    getDataFromCollection: function (collectionName, query){
+        return new Promise((resolve, reject) => {
+            db.collection(collectionName).where(query).get().then(res => {
+                resolve(res.data); //数据库获取成功，返回数据
+            }).catch(err => {
+                reject(err); //获取失败，返回错误信息
+            })
         })
     },
     
-    onLoad: function() {
-        // 初始化函数
-        const app = getApp();
-        // 给全局数据的recipes添加key(clickOrder)
-        app.globalData.recipes.map((item) => {
-            return {
-                ...item,
-                clickOrder: 0
-            };
-        });
-        this.data.categories = app.globalData.categories;
-        this.data.recipes = app.globalData.recipes;
-        // 显示第一个种类的菜谱
-        const initialRecipe = this.getRecipes(this.data.categories[0].name);
-        this.setData({  
-            categories: this.data.categories,
-            curIndex: 0,
-            selectedRecipes: initialRecipe
-        })
+
+    getCurrentCategory: async function(e) {
+        // 响应用户的点击事件，显示对应种类的所有食谱(异步操作)
+        try {
+            let curIndex = e.currentTarget.dataset.index;
+            let curId = this.data.categories[curIndex].category_id;
+            const selectedRecipes = await this.getDataFromCollection('recipes', {category_id: curId});
+            this.setData({
+                curIndex,
+                selectedRecipes
+            })
+        } catch(err) {
+            console.log(err)
+        }
+    },
+    
+    onLoad: async function(options) {
+        // 异步操作，等待接受数据库数据,然后传给前端渲染
+        try {
+            const categories = await this.getDataFromCollection('category', {});
+            const selectedRecipes = await this.getDataFromCollection('recipes', {category_id :1});
+            this.setData({
+                categories,
+                selectedRecipes,
+                curIndex: 0
+            })
+        } catch(err) {
+            console.log(err)
+        }
     },
 
     onShow: function() {
