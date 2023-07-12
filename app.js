@@ -1,5 +1,14 @@
 // app.js
 App({
+    onLaunch: function() {
+        wx.cloud.init({
+            env: "melon-menu-4gkkki29d5036046"
+        });
+        var globalData = wx.getStorageSync('globalData');
+        if (globalData) {
+          this.globalData = globalData;
+        }
+    },
     globalData: {
         categories: [
             {name: '甜品', id: 1},
@@ -22,7 +31,7 @@ App({
             {name: '煎三文鱼', id: 10, category: '荤菜', buttonText: '添加'},
             {name: '咖喱猪排', id: 11, category: '荤菜', buttonText: '添加'},
             {name: '咖喱牛肉', id: 12, category: '荤菜', buttonText: '添加'},
-            {name: '烤羊排', id: 13, category: '荤菜', buttonText: '添加'},
+            {name: '青椒炒肉', id: 13, category: '荤菜', buttonText: '添加'},
             {name: '包菜炒粉丝', id: 14, category: '素菜', buttonText: '添加'},
             {name: '烤鸡翅', id: 15, category: '荤菜', buttonText: '添加'},
             {name: '萝卜炖牛腩', id: 16, category: '荤菜', buttonText: '添加'},

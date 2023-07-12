@@ -3,10 +3,26 @@
     <view class="recipe-name">
         <text>{{recipe.name}}</text>
     </view>
-    <view class="ingredients">
-        <text></text>
-    </view>
-    <view class="recipe">
+    <view class="title">食材明细</view>
+    <view class='detail' wx:for="{{detail}}">
+        <view class="main">
+            <view class="legend">主料</view>
+            <view class="container">
+            <text class="content" wx:for="{{item.ingredients.main}}">{{item}}</text>
+            </view>
+        </view>
+        <view class="seasoning">
+            <view class="legend">调料</view>
+            <view class="container">
+            <text class="content" wx:for="{{item.ingredients.seasoning}}">{{item}}</text>
+            </view>
+        </view>
+        <view class="title">做法步骤</view>
+        <view class="steps">
+            <text class="steps-content" wx:for="{{item.steps}}" wx:for-index="index">
+            {{index}}. {{item}}
+            </text>
+        </view>
     </view>
 </view>
 

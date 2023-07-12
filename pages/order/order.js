@@ -137,8 +137,18 @@ Page({
             }
             return item
         })
+        // 更新本地数据
         wx.setStorageSync('recipes', updatedRecipes)
         this.onShow()
         
-    }
+    },
+
+    goToDetailPage: function(e) {
+        // 跳转至详情页
+        let curIndex = e.currentTarget.dataset.index;
+        let curId = this.data.addedRecipes[curIndex].id;
+        wx.navigateTo({
+          url: '/pages/detail/detail?id=' + curId,
+        })
+    },
 })

@@ -13,4 +13,63 @@
     align-items: center;
 }
 
-/* 配料表 */
+/* 食材标题 */
+.title {
+    height: 50rpx;
+    color: rgb(0, 102, 255);
+    margin-left: 20rpx;
+    font-size: 40rpx;
+    margin-top: 40rpx;
+}
+
+/* 主料 */
+.main {
+    border-radius: 20rpx;
+    border: 2rpx solid rgb(184, 168, 168);
+    height: auto;
+    margin-top: 40rpx;
+}
+
+/* 标题的样式（主料、调料）*/
+.detail .legend {
+    position: absolute;
+    background: white;
+    margin-left: 20rpx;
+    margin-top: -25rpx;
+    padding: 0 10rpx;
+}
+
+/*调料和主料的盒子样式 */
+.detail .container {
+    margin-top: 60rpx;
+    margin-left: 30rpx;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*调料和主料的内容样式 */
+.content {
+    width: 25%;
+    height: 100%;
+    padding-bottom: 30rpx;
+}
+
+/* 调料 */
+.seasoning {
+    border-radius: 20rpx;
+    border: 2rpx solid rgb(184, 168, 168);
+    height: auto;
+    margin-top: 40rpx;
+}
+
+/* 步骤 */
+.steps {
+    margin-left: 20rpx;
+}
+
+.steps-content {
+    padding-bottom: 40rpx;
+}
+
+  

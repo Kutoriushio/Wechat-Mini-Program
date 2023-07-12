@@ -43,9 +43,11 @@ Page({
                 clickOrder: 0
             };
         });
-        // 本地存储数据
-        wx.setStorageSync('category', app.globalData.categories);
-        wx.setStorageSync('recipes', app.globalData.recipes);
+        // 判断本地是否已有存储数据
+        if (wx.getStorageInfoSync('recipes').keys.length === 0){
+            wx.setStorageSync('category', app.globalData.categories);
+            wx.setStorageSync('recipes', app.globalData.recipes);
+        }
         const categories = wx.getStorageSync('category');
         // 渲染第一个种类的菜谱
         const initialRecipe = this.getRecipes(categories[0].name);
@@ -54,6 +56,7 @@ Page({
             curIndex: 0,
             selectedRecipes: initialRecipe
         })
+
     },
 
     onShow: function() {
